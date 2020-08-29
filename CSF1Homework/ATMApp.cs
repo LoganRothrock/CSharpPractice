@@ -81,7 +81,7 @@ namespace CSF1Homework
                 }
                 Console.WriteLine("Would you like to do anything else? (Deposit/Withdrawal) Y/N");
                 another = Console.ReadLine().ToUpper();
-                if (another == "Y" || another == "y" || another == "yes" || another == "Yes")
+                if (another == "Y" || another == "YES")
                 {
                     Console.Clear();
                 }else 
