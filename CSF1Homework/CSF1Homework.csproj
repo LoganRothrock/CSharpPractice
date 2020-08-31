@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSF1Homework.GradesLoop</StartupObject>
+    <StartupObject>CSF1Homework.ATMApp</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

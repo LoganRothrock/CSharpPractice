@@ -13,22 +13,50 @@ namespace CSF1Homework
             string userAccount , userPIN ,another;
             const string USER_ACCOUNT_NUMBER = "123456789" , USER_PIN = "1234";
             decimal userBalance = 0.0m;
+ 
             Console.Write("Hello thank you for using our ATM");
-            do
+            for (int i = 4; i >= 0; i--)
             {
                 Console.Write("\nPlease enter your account number : ");
-                 userAccount = Console.ReadLine();      
-                
-            } while  (userAccount != USER_ACCOUNT_NUMBER);
-            Console.Clear();
-            Console.Write("Accounts matched");
-            do
-            {
-                Console.Write("\nNow please enter the PIN associated with that account: ");
-                userPIN = Console.ReadLine();
+                userAccount = Console.ReadLine();
+                if (i == 0 && userAccount != USER_ACCOUNT_NUMBER)
+                {
+                    Console.WriteLine("\nYou have used up all of your attempts. The application will now close.\nHave a nice day :)");
+                    System.Environment.Exit(0);
 
-            } while (userPIN != USER_PIN);
+                }
+                else if(userAccount==USER_ACCOUNT_NUMBER)
+                {
+                    i = -1;
+                }
+                else
+                {
+                    Console.WriteLine("You have {0} more attempt{1} left.", i, i == 1 ? "" : "s");
+                }
+
+            }
             Console.Clear();
+            Console.Write("Accounts matched!");
+            for (int i = 4; i >= 0; i--)
+            {
+                Console.Write("\nPlease enter your PIN number : ");
+                userPIN = Console.ReadLine();
+                if (i == 0 && userPIN != USER_PIN)
+                {
+                    Console.WriteLine("\nYou have used up all of your attempts. The application will now close.\nHave a nice day :)");
+                    System.Environment.Exit(0);
+
+                }
+                else if (userPIN == USER_PIN)
+                {
+                    i = -1;
+                }
+                else
+                {
+                    Console.WriteLine("You have {0} more attempt{1} left.",i, i==1 ? "" : "s");
+                }
+            }
+                Console.Clear();
             Console.WriteLine("PINS matched!");
             bool repeat = true;
             while (repeat)
